@@ -1,0 +1,118 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  /* Header */
+  header {
+    background-color: #111;
+    color: #fff;
+    padding: 20px 0;
+  }
+  
+  header h1 {
+    margin-bottom: 10px;
+  }
+  
+  nav {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+  }
+  
+  nav a {
+    color: #fff;
+    font-weight: bold;
+  }
+  
+  /* Page title */
+  .page-title {
+    font-size: 2rem;
+    margin: 30px 0 20px;
+    text-align: center;
+  }
+  
+  /* Episodes Grid */
+  .episodes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+  }
+  
+  /* Episode Card */
+  .episode-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+  }
+  
+  .episode-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .episode-card img.thumbnail {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 12px;
+  }
+  
+  .episode-card h2 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  .episode-card h2 a {
+    color: #111;
+  }
+  
+  .episode-card p {
+    margin-bottom: 8px;
+  }
+  
+  .episode-card .date {
+    font-size: 0.85rem;
+    color: #777;
+  }
+  .thumbnail {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #111;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+  }
+  

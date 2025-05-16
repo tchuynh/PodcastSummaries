@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Episode Summary</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main id="episode-container">
+    <!-- Episode content gets injected here -->
+  </main>
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const episodeId = params.get("id");
+    
+      fetch('jre_episodes.json')
+        .then(res => res.json())
+        .then(episodes => {
+          const episode = episodes.find(ep => ep.videoId === episodeId);
+          const container = document.getElementById("episode-container");
+    
+          if (episode) {
+            container.innerHTML = `
+              <h1>${episode.title}</h1>
+              <img src="${episode.thumbnail}" alt="${episode.title}" class="thumbnail"/>
+              <p>${episode.description}</p>
+              <p><strong>Date:</strong> ${new Date(episode.publishedAt).toLocaleDateString()}</p>
+              <a href="index.html">← Back to list</a>
+            `;
+          } else {
+            container.innerHTML = `<p>Episode not found.</p>`;
+          }
+        })
+        .catch(error => {
+          console.error("Failed to load episode:", error);
+          document.getElementById("episode-container").innerHTML = "<p>Error loading episode.</p>";
+        });
+    </script>
+  
+</body>
+</html>
