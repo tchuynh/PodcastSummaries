@@ -1,4 +1,4 @@
-fetch('jre_episodes.json')
+fetch('jre_episodes_summary.json')
   .then(res => res.json())
   .then(data => {
     const container = document.getElementById('episodes-container');
